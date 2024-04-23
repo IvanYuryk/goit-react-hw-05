@@ -1,0 +1,20 @@
+.nav {
+  display: flex;
+  align-items: center;
+  margin-left: 32px;
+  gap: 28px;
+}
+.navLink {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.active {
+  color: red;
+}

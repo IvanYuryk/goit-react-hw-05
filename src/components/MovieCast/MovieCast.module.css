@@ -1,0 +1,40 @@
+.errorMessage {
+  color: #f22727;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-align: center;
+}
+
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  row-gap: 35px;
+  margin: 40px 30px;
+}
+
+.castMovies {
+  width: 250px;
+}
+
+.moviesName {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.moviesCharacter {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.castImage {
+  width: 250px;
+  height: 375px;
+  object-fit: cover;
+}

@@ -1,0 +1,45 @@
+.posterImage {
+  width: 350px;
+  height: 450px;
+  object-fit: cover;
+}
+
+.detalsPage {
+  margin: 30px;
+  display: flex;
+}
+
+.detalsInfo {
+  margin-left: 30px;
+}
+
+.detalsTitle {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  margin-bottom: 15px;
+}
+
+.detalsOwerview {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  margin-bottom: 15px;
+}
+
+.detalsGenres {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  margin-bottom: 15px;
+}
+
+.detalsText {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.genre {
+  margin-right: 10px;
+}

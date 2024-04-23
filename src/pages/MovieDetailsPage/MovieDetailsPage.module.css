@@ -1,0 +1,54 @@
+.castReview {
+  margin-top: 30px;
+}
+
+.castReviewList {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.goBack {
+  background-color: #747373;
+  padding: 15px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.goBack:hover {
+  transform: translateY(2px);
+  box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 1);
+}
+
+.castReviewBtn {
+  background-color: #747373;
+  padding: 15px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.active,
+.castReviewBtn:hover {
+  transform: translateY(2px);
+  box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 1);
+}
+
+.errorMessage {
+  color: #f22727;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-align: center;
+  margin-bottom: 40px;
+}

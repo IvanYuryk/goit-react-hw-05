@@ -1,49 +1,45 @@
-import { useState, useEffect } from "react";
+import React, { Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
+import Loader from "./components/Loader/Loader";
+import Navigation from "./components/Navigation/Navigation";
+
 import "./App.css";
-import contactsData from "./contacts.json";
-import ContactForm from "./components/ContactForm/ContactForm";
-import ContactList from "./components/ContactList/ContactList";
-import SearchBox from "./components/SearchBox/SearchBox";
+
+const HomePage = React.lazy(() => import("./pages/HomePage/HomePage"));
+const MoviesPage = React.lazy(() => import("./pages/MoviesPage/MoviesPage"));
+const NotFoundPage = React.lazy(() =>
+  import("./pages/NotFoundPage/NotFoundPage")
+);
+const MovieDetailsPage = React.lazy(() =>
+  import("./pages/MovieDetailsPage/MovieDetailsPage")
+);
+const MovieCast = React.lazy(() => import("./components/MovieCast/MovieCast"));
+const MovieReviews = React.lazy(() =>
+  import("./components/MovieReviews/MovieReviews")
+);
 
 function App() {
-  const [contacts, setContacts] = useState(() => {
-    const strignifiedContacts = localStorage.getItem("contacts");
-    if (!strignifiedContacts) return [contactsData];
-
-    const parsedContacts = JSON.parse(strignifiedContacts);
-    return parsedContacts;
-  });
-
-  const [searchTerm, setSearchTerm] = useState("");
-
-  useEffect(() => {
-    localStorage.setItem("contacts", JSON.stringify(contacts));
-  }, [contacts]);
-
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  const filteredContacts = contacts.filter((contact) =>
-    contact.name?.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  const deleteContact = (id) => {
-    setContacts((prevContacts) =>
-      prevContacts.filter((contact) => contact.id !== id)
-    );
-  };
-
-  const addContact = (newContact) => {
-    setContacts((prevContacts) => [...prevContacts, newContact]);
-  };
-
   return (
-    <div className="container">
-      <h1>Phonebook</h1>
-      <ContactForm onAddContact={addContact} />
-      <SearchBox searchTerm={searchTerm} onSearchChange={handleSearchChange} />
-      <ContactList contacts={filteredContacts} onDelete={deleteContact} />
+    <div>
+      <header>
+        <Navigation />
+      </header>
+      <main>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/movies" element={<MoviesPage />} />
+            <Route
+              path="/movies/:movieId"
+              element={<MovieDetailsPage to={"/movies/:movieId/*"} />}
+            >
+              <Route path="cast" element={<MovieCast />} />
+              <Route path="reviews" element={<MovieReviews />} />
+            </Route>
+            <Route path="*" element={<NotFoundPage to={"/"} />} />
+          </Routes>
+        </Suspense>
+      </main>
     </div>
   );
 }
