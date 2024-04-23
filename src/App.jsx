@@ -7,15 +7,16 @@ import "./App.css";
 
 const HomePage = React.lazy(() => import("./pages/HomePage/HomePage"));
 const MoviesPage = React.lazy(() => import("./pages/MoviesPage/MoviesPage"));
-const NotFoundPage = React.lazy(() =>
-  import("./pages/NotFoundPage/NotFoundPage")
-);
 const MovieDetailsPage = React.lazy(() =>
   import("./pages/MovieDetailsPage/MovieDetailsPage")
 );
 const MovieCast = React.lazy(() => import("./components/MovieCast/MovieCast"));
 const MovieReviews = React.lazy(() =>
   import("./components/MovieReviews/MovieReviews")
+);
+
+const NotFoundPage = React.lazy(() =>
+  import("./pages/NotFoundPage/NotFoundPage")
 );
 
 function App() {
