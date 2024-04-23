@@ -9,7 +9,7 @@ const getNavLinkStyle = ({ isActive }) =>
 const Navigation = () => {
   return (
     <nav className={css.nav}>
-      <NavLink className={getNavLinkStyle} to="/home">
+      <NavLink className={getNavLinkStyle} to="/">
         Home
       </NavLink>
       <NavLink className={getNavLinkStyle} to="/movies">
